@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects</title>
+</head>
+<body>
+    <h1>Objects</h1>
+    <h2>See console</h2>
+   <script>
+    const obj1 = {
+        name : "Logesh",
+        age : 20,
+        speak : function talk(){
+            alert('I am Logesh')
+        },
+        changeName : function change(name=obj1.name){
+            obj1.name = name
+            console.log('Name Changed')
+        },
+
+        //Short hand method
+        changeAge(age=obj1.age){
+            obj1.age = age;
+            console.log("Age Changed")
+        }
+    };
+    const obj2 = obj1;
+    // obj1.speak()
+    // obj2.name = 'Raju'
+    // obj1.changeName = 'Raju'
+
+    //destructuring
+    const {name,age,speak,changeName,changeAge} = obj1;
+
+    //short hand property
+    const obj3 = {
+        name,
+        age,
+        speak,
+        changeAge,
+        changeName
+    }
+    
+    // obj1===obj2 -- True same reference object
+    // obj1===obj3 -- False different refernce object even though values are same
+
+   </script>
+</body>
+</html>
